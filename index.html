@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <titl>WebRTC demo</titl>
+  </head>
+  <body>
+    <video height="300" id="localVideo"></video>
+    <div id="remotesVideos"></div>
+
+    <script src="https://simplewebrtc.com/latest-v2.js"></script>
+    <script>
+      var webrtc = new SimpleWebRTC({
+        url: 'http://localhost:8888',
+        localVideoEl: 'localVideo',
+        remoteVideosEl: 'remotesVideos',
+        autoRequestMedia: true,
+      });
+
+      webrtc.on('readyToCall', function () {
+        webrtc.joinRoom('test');
+      });
+    </script>
+  </body>
+</html>
