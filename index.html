@@ -30,18 +30,6 @@
     <div id="remotesVideos"></div>
 
     <script src="https://simplewebrtc.com/latest-v2.js"></script>
-    <script>
-      var webrtc = new SimpleWebRTC({
-        url: 'http://localhost:8888',
-        localVideoEl: 'localVideo',
-        remoteVideosEl: 'remotesVideos',
-        autoRequestMedia: true,
-      });
-
-      webrtc.on('readyToCall', function () {
-        var room = window.location.pathname.slice(1);
-        webrtc.joinRoom(room);
-      });
-    </script>
+    <script src="scripts.js"></script>
   </body>
 </html>
